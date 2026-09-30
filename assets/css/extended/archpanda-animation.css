@@ -1,0 +1,12 @@
+.profile .archpanda-animation,
+.profile .archpanda-poster {
+    width: 480px;
+    max-width: 100%;
+    height: auto;
+    border-radius: 0;
+}
+.profile .archpanda-poster { display: none; }
+@media (prefers-reduced-motion: reduce) {
+    .profile .archpanda-animation { display: none; }
+    .profile .archpanda-poster { display: block; }
+}
