@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy — Obsidian Citation Capture</title>
+  <meta name="description" content="Official Privacy Policy for Obsidian Citation Capture Chrome Extension. Zero tracking, local storage, private AI options, and transparent disclosures.">
+  <style>
+    :root {
+      --bg-color: #f8fafc;
+      --card-bg: #ffffff;
+      --text-main: #0f172a;
+      --text-muted: #475569;
+      --border-color: #e2e8f0;
+      --primary: #4f46e5;
+      --primary-light: #eef2ff;
+      --success-bg: #ecfdf5;
+      --success-border: #a7f3d0;
+      --success-text: #065f46;
+      --info-bg: #eff6ff;
+      --info-border: #bfdbfe;
+      --info-text: #1e40af;
+      --code-bg: #f1f5f9;
+      --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+      --font-stack: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg-color: #0b0f19;
+        --card-bg: #111827;
+        --text-main: #f8fafc;
+        --text-muted: #94a3b8;
+        --border-color: #1e293b;
+        --primary: #818cf8;
+        --primary-light: rgba(99, 102, 241, 0.15);
+        --success-bg: rgba(16, 185, 129, 0.1);
+        --success-border: rgba(16, 185, 129, 0.25);
+        --success-text: #34d399;
+        --info-bg: rgba(59, 130, 246, 0.1);
+        --info-border: rgba(59, 130, 246, 0.25);
+        --info-text: #60a5fa;
+        --code-bg: #1e293b;
+        --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.4);
+      }
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-stack);
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      line-height: 1.65;
+      padding: 2.5rem 1rem;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    header {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 2.5rem 2rem;
+      margin-bottom: 2rem;
+      box-shadow: var(--shadow);
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-bottom: 1rem;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .badge-primary {
+      background-color: var(--primary-light);
+      color: var(--primary);
+    }
+
+    .badge-success {
+      background-color: var(--success-bg);
+      color: var(--success-text);
+      border: 1px solid var(--success-border);
+    }
+
+    h1 {
+      font-size: 2.25rem;
+      font-weight: 800;
+      color: var(--text-main);
+      line-height: 1.25;
+      margin-bottom: 0.75rem;
+    }
+
+    .meta-line {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+
+    .toc-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 1.75rem 2rem;
+      margin-bottom: 2rem;
+      box-shadow: var(--shadow);
+    }
+
+    .toc-card h2 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 0.85rem;
+    }
+
+    .toc-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 0.5rem 1.5rem;
+      list-style-type: none;
+    }
+
+    .toc-grid a {
+      color: var(--primary);
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: color 0.15s ease;
+    }
+
+    .toc-grid a:hover {
+      text-decoration: underline;
+    }
+
+    article {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 2.5rem 2rem;
+      box-shadow: var(--shadow);
+    }
+
+    h2 {
+      font-size: 1.55rem;
+      font-weight: 700;
+      margin-top: 2.25rem;
+      margin-bottom: 1rem;
+      padding-bottom: 0.4rem;
+      border-bottom: 1px solid var(--border-color);
+      color: var(--text-main);
+    }
+
+    h3 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-top: 1.5rem;
+      margin-bottom: 0.75rem;
+      color: var(--text-main);
+    }
+
+    p {
+      margin-bottom: 1.15rem;
+      color: var(--text-muted);
+    }
+
+    strong {
+      color: var(--text-main);
+    }
+
+    ul, ol {
+      margin-bottom: 1.25rem;
+      padding-left: 1.5rem;
+      color: var(--text-muted);
+    }
+
+    li {
+      margin-bottom: 0.45rem;
+    }
+
+    code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 0.88em;
+      background: var(--code-bg);
+      padding: 0.15rem 0.4rem;
+      border-radius: 4px;
+      color: var(--text-main);
+    }
+
+    .callout {
+      border-left: 4px solid var(--primary);
+      background: var(--info-bg);
+      border-color: var(--info-border);
+      color: var(--info-text);
+      padding: 1.25rem 1.5rem;
+      border-radius: 0 8px 8px 0;
+      margin: 1.5rem 0;
+    }
+
+    .callout-success {
+      border-left-color: var(--success-text);
+      background: var(--success-bg);
+      color: var(--success-text);
+    }
+
+    .callout strong {
+      display: block;
+      margin-bottom: 0.35rem;
+      color: inherit;
+    }
+
+    .table-container {
+      overflow-x: auto;
+      margin: 1.5rem 0;
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.95rem;
+    }
+
+    th {
+      background: var(--code-bg);
+      color: var(--text-main);
+      padding: 0.85rem 1rem;
+      font-weight: 600;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    td {
+      padding: 0.85rem 1rem;
+      border-bottom: 1px solid var(--border-color);
+      color: var(--text-muted);
+      vertical-align: top;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 3rem;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    footer a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="badge-row">
+        <span class="badge badge-primary">Version 1.0.0</span>
+        <span class="badge badge-success">Zero-Tracking Certified</span>
+        <span class="badge badge-primary">Manifest V3</span>
+      </div>
+      <h1>Privacy Policy for Obsidian Citation Capture</h1>
+      <div class="meta-line">
+        <span><strong>Effective Date:</strong> September 12, 2026</span>
+        <span><strong>Status:</strong> Official Release</span>
+        <span><strong>Scope:</strong> Chrome Web Store Extension</span>
+      </div>
+    </header>
+
+    <section class="toc-card">
+      <h2>Table of Contents</h2>
+      <ol class="toc-grid">
+        <li><a href="#summary">1. Executive Summary & Principles</a></li>
+        <li><a href="#tracking">2. Zero Tracking & Telemetry Policy</a></li>
+        <li><a href="#storage">3. Data Collection & Local Storage</a></li>
+        <li><a href="#apis">4. External Academic APIs</a></li>
+        <li><a href="#obsidian">5. Obsidian Vault Bridges</a></li>
+        <li><a href="#ai">6. AI Processing Tiers</a></li>
+        <li><a href="#retention">7. Data Retention & Deletion Rights</a></li>
+        <li><a href="#security">8. Security Safeguards</a></li>
+        <li><a href="#compliance">9. Regulatory Disclosures</a></li>
+        <li><a href="#changes">10. Policy Updates</a></li>
+        <li><a href="#contact">11. Contact & Support</a></li>
+      </ol>
+    </section>
+
+    <article>
+      <section id="summary">
+        <h2>1. Executive Summary & Privacy Principles</h2>
+        <p>Obsidian Citation Capture is an open-source, academic research productivity tool designed to capture bibliographic citations, extract scholarly metadata, and write structured literature notes directly into your local Obsidian vault.</p>
+        <p>Our architectural philosophy is founded on the principle of <strong>User Sovereignty and Data Minimization</strong>:</p>
+        <div class="callout callout-success">
+          <strong>Core Privacy Commitments:</strong>
+          <ul>
+            <li><strong>Zero Tracking:</strong> We never track browsing history, pages visited, or research queries.</li>
+            <li><strong>Zero Telemetry:</strong> No analytics libraries, crash loggers, or behavioral profiling tools are loaded.</li>
+            <li><strong>Zero Monetization:</strong> We do not sell, rent, monetize, or trade your personal or research data.</li>
+            <li><strong>Local-First:</strong> Parsing, formatting, and note generation run locally on your device.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="tracking">
+        <h2>2. Zero Tracking & Telemetry Policy</h2>
+        <p>Obsidian Citation Capture operates with strict data isolation:</p>
+        <ul>
+          <li><strong>No Third-Party Trackers:</strong> No Google Analytics, Mixpanel, Segment, PostHog, or tracking pixels are bundled or loaded.</li>
+          <li><strong>No Background Surveillance:</strong> The content script activates solely to scrape academic metadata when you explicitly request capture (by clicking the extension toolbar icon, opening the popup, or choosing a right-click context menu item).</li>
+          <li><strong>No Keystroke or Form Logging:</strong> The extension never inspects input forms, passwords, payment info, or unrelated page interactions.</li>
+          <li><strong>No Device Fingerprinting:</strong> The extension does not inspect canvas hashes, WebGL profiles, audio contexts, or system font rosters to fingerprint your hardware.</li>
+        </ul>
+      </section>
+
+      <section id="storage">
+        <h2>3. Data Collection and Local Storage Disclosures</h2>
+        <h3>3.1 What Data Is Stored</h3>
+        <p>To operate as configured by you, the extension saves configuration preferences within Chrome's native storage APIs (<code>chrome.storage.sync</code> and <code>chrome.storage.local</code>):</p>
+        <ul>
+          <li><strong>Target Vault Name:</strong> Name of your target Obsidian vault (e.g., <code>ResearchVault</code>).</li>
+          <li><strong>Literature Folder Path:</strong> Directory path where generated notes are stored (default: <code>Literature</code>).</li>
+          <li><strong>Custom Markdown Template:</strong> Note template structure, YAML frontmatter formatting, and variable substitutions.</li>
+          <li><strong>Bridge Mode Selection:</strong> Note dispatch method (<code>obsidian-uri</code>, <code>local-rest</code>, <code>plugin-protocol</code>, or <code>clipboard</code>).</li>
+          <li><strong>Local REST API Configuration:</strong> Loopback port (default: <code>27124</code>) and bearer token used strictly to communicate with Obsidian Local REST API on loopback.</li>
+          <li><strong>AI Configuration Preferences:</strong> Selected mode (<code>auto</code>, <code>ollama</code>, <code>cloud</code>, <code>byok</code>, or <code>none</code>), Ollama endpoint (<code>http://localhost:11434</code>), model name, and cloud proxy URL.</li>
+          <li><strong>BYOK Credentials:</strong> Optional user-supplied API keys for Anthropic Claude or OpenAI.</li>
+          <li><strong>Licensing & Capture Count:</strong> License key, tier status (Free, Pro, Pro+, Lifetime), and local capture count.</li>
+        </ul>
+
+        <h3>3.2 Where and How It Is Stored</h3>
+        <p><strong>Chrome Profile Synchronization:</strong> General configuration parameters (vault name, folder path, template, bridge preference) are synced across your signed-in Google Chrome profile via Google's encrypted Chrome Sync infrastructure (<code>chrome.storage.sync</code>). We do not host or operate intermediary configuration servers.</p>
+        <p><strong>Device-Local Secrets:</strong> Sensitive credentials (BYOK API keys and Obsidian Local REST API bearer tokens) are stored locally in physical storage (<code>chrome.storage.local</code>) on your current device. <strong>They are never transmitted to our servers.</strong></p>
+      </section>
+
+      <section id="apis">
+        <h2>4. External Academic APIs & Bibliographic Enrichment</h2>
+        <p>When you capture a paper with a registered identifier (DOI, arXiv ID, or PubMed ID), the extension may query public scholarly repositories to retrieve official BibTeX records and verified metadata.</p>
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Academic Service</th>
+                <th>Endpoint Queried</th>
+                <th>Data Sent</th>
+                <th>Purpose</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>International DOI Foundation</strong></td>
+                <td><code>https://doi.org/*</code></td>
+                <td>DOI identifier only</td>
+                <td>Content negotiation for canonical publisher BibTeX</td>
+              </tr>
+              <tr>
+                <td><strong>CrossRef REST API</strong></td>
+                <td><code>https://api.crossref.org/*</code></td>
+                <td>DOI identifier only</td>
+                <td>Resolving author rosters, publication years, and journal titles</td>
+              </tr>
+              <tr>
+                <td><strong>arXiv Export API</strong></td>
+                <td><code>https://export.arxiv.org/*</code></td>
+                <td>arXiv ID only</td>
+                <td>Parsing preprint metadata, author list, abstract, and category</td>
+              </tr>
+              <tr>
+                <td><strong>NCBI PubMed E-Utilities</strong></td>
+                <td><code>https://eutils.ncbi.nlm.nih.gov/*</code></td>
+                <td>PubMed PMID only</td>
+                <td>Retrieving MEDLINE publication records for medical articles</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p><strong>Privacy Guarantee:</strong> These requests contain <em>only</em> the public paper identifier. No cookies, account names, user IP proxies, or browsing histories are attached. You can turn off automatic enrichment at any time in Options.</p>
+      </section>
+
+      <section id="obsidian">
+        <h2>5. Obsidian Vault Bridge & Local Loopback Networking</h2>
+        <p>The extension provides three mechanisms to transfer literature notes into your local Obsidian vault:</p>
+        <ul>
+          <li><strong>Obsidian URI Scheme (<code>obsidian://new</code>):</strong> Dispatches formatted markdown notes via the OS-registered Obsidian desktop protocol handler. Runs 100% offline via local IPC. <em>Zero network transmission.</em></li>
+          <li><strong>Obsidian Local REST API (<code>https://127.0.0.1:27124</code>):</strong> Dispatches notes in the background via HTTP PUT to the Obsidian Local REST API community plugin. Traffic stays strictly within your RFC 1122 loopback interface (<code>127.0.0.1</code>) and never leaves your computer.</li>
+          <li><strong>System Clipboard (<code>clipboardWrite</code>):</strong> Directly copies formatted BibTeX, APA, MLA, or Markdown citations to your system clipboard for manual pasting.</li>
+        </ul>
+      </section>
+
+      <section id="ai">
+        <h2>6. AI Processing Tiers</h2>
+        <p>Obsidian Citation Capture offers an optional AI summarization module to generate concise 2-bullet executive takeaways and classification tags:</p>
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Tier</th>
+                <th>Destination Endpoint</th>
+                <th>Privacy & Retention Model</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Tier 1: Local Ollama (Most Private)</strong></td>
+                <td><code>http://localhost:11434/*</code></td>
+                <td><strong>100% on-device.</strong> Paper title/abstract processed by your local Ollama server over loopback. Zero data leaves your machine. Completely offline capable.</td>
+              </tr>
+              <tr>
+                <td><strong>Tier 2: Managed Cloud AI Proxy</strong></td>
+                <td><code>https://obsidian-citation-capture.onrender.com/*</code></td>
+                <td><strong>Ephemeral processing only.</strong> Paper title/abstract transmitted over TLS to generate a 2-bullet summary. Zero data retention; processed entirely in volatile RAM and discarded immediately. No user training, no disk persistence, no personal identifiers attached.</td>
+              </tr>
+              <tr>
+                <td><strong>Tier 3: Bring Your Own Key (BYOK)</strong></td>
+                <td><code>https://api.anthropic.com/*</code><br><code>https://api.openai.com/*</code></td>
+                <td><strong>Direct client-to-vendor TLS connection.</strong> Your browser connects directly to Anthropic Claude or OpenAI using your personal API key. We have no intermediary server and zero visibility into your keys or requests.</td>
+              </tr>
+              <tr>
+                <td><strong>Tier 4: Disabled / None</strong></td>
+                <td>None</td>
+                <td><strong>No AI processing.</strong> Full manual/deterministic scraping only.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="retention">
+        <h2>7. Data Retention, Export, and Deletion Rights</h2>
+        <p><strong>Zero Remote Retention:</strong> We operate no remote user databases. Captured notes reside exclusively inside your own Obsidian vault on your hard drive.</p>
+        <p><strong>Complete Data Deletion:</strong></p>
+        <ul>
+          <li>Uninstalling the extension from Chrome removes all locally stored preferences, keys, and custom templates.</li>
+          <li>You can reset stored options at any time via the "Reset to Defaults" button on the extension Options page.</li>
+          <li>Your existing notes in Obsidian remain intact on your computer because they are regular Markdown files under your complete ownership.</li>
+        </ul>
+      </section>
+
+      <section id="security">
+        <h2>8. Security Safeguards</h2>
+        <ul>
+          <li><strong>Manifest V3 Compliance:</strong> Uses Google's modern extension platform architecture with service workers and declarative rules.</li>
+          <li><strong>Strict CSP:</strong> No <code>eval()</code>, no remote script loading, and no dynamic code execution. All extension code is pre-compiled and bundled locally.</li>
+          <li><strong>Loopback Isolation:</strong> Outbound local requests are restricted strictly to loopback addresses (<code>localhost</code>, <code>127.0.0.1</code>) on designated ports.</li>
+        </ul>
+      </section>
+
+      <section id="compliance">
+        <h2>9. Regulatory Compliance Disclosures</h2>
+        <p><strong>CCPA / CPRA:</strong> We do not sell or share personal consumer information. No behavioral profiling or cross-site tracking is conducted.</p>
+        <p><strong>GDPR:</strong> No personal user data is processed by external servers. Outbound queries to public academic repositories are initiated under legitimate interest to fulfill the user's explicit request for citation data.</p>
+        <p><strong>COPPA:</strong> We do not knowingly collect or solicit information from children under 13.</p>
+      </section>
+
+      <section id="changes">
+        <h2>10. Modifications to This Policy</h2>
+        <p>We may update this policy periodically to reflect platform updates or new capabilities. Notice of material updates will be included in the extension changelog and posted in the official GitHub repository.</p>
+      </section>
+
+      <section id="contact">
+        <h2>11. Contact & Support</h2>
+        <p>If you have questions regarding this Privacy Policy or extension security, please reach out:</p>
+        <ul>
+          <li><strong>Core Development Team:</strong> Obsidian Citation Capture Team</li>
+          <li><strong>Privacy Inquiries:</strong> <a href="mailto:privacy@obsidiancitation.org">privacy@obsidiancitation.org</a></li>
+          <li><strong>Technical Support:</strong> <a href="mailto:support@obsidiancitation.org">support@obsidiancitation.org</a></li>
+          <li><strong>GitHub Issues:</strong> <a href="https://github.com/obsidian-citation/obsidian-citation-capture/issues" target="_blank" rel="noopener noreferrer">https://github.com/obsidian-citation/obsidian-citation-capture/issues</a></li>
+        </ul>
+      </section>
+    </article>
+
+    <footer>
+      <p>&copy; 2026 Obsidian Citation Capture Contributors. Released under the MIT License.</p>
+      <p>Obsidian is a trademark of Dynalist Inc. Obsidian Citation Capture is an independent open-source tool developed by the academic community and is not affiliated with or endorsed by Dynalist Inc.</p>
+    </footer>
+  </div>
+</body>
+</html>

@@ -38,6 +38,10 @@ theme = 'PaperMod'
   url = '/work-with-me/'
 
 [[params.profileMode.buttons]]
+  name = 'DevTools Fix Assistant'
+  url = '/devtools-fixer/'
+
+[[params.profileMode.buttons]]
   name = 'Obsidian Citation Capture'
   url = 'https://scottyad.github.io/obsidian-citation-capture/'
 
@@ -61,6 +65,11 @@ theme = 'PaperMod'
     name = 'Work With Me'
     url = '/work-with-me/'
     weight = 30
+  [[menu.main]]
+    identifier = 'devtools'
+    name = 'DevTools Fix Assistant'
+    url = '/devtools-fixer/'
+    weight = 35
   [[menu.main]]
     identifier = 'citation'
     name = 'Citation Capture'
