@@ -13,7 +13,7 @@ I'm Scott (thedemiurge). I build custom software, browser extensions, and automa
 - **Obsidian Plugins** — Custom workflows, integrations, productivity tools
 - **Python Apps & Scripts** — CLI tools, web scrapers, data pipelines, API integrations
 - **Automation** — Build systems, CI/CD workflows, deployment pipelines
-- **Linux Optimization** — Thermal management, performance tuning, custom kernels
+- **Linux Optimization** — Thermal management, performance tuning
 
 ## Recent Work
 
