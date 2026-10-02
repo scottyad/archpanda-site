@@ -1,5 +1,6 @@
 ---
 title: "Work With Me"
+url: "/work-with-me/"
 ---
 
 # Work With Me
