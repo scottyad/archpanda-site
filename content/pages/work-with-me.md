@@ -17,7 +17,7 @@ I'm Scott (thedemiurge). I build custom software, browser extensions, and automa
 
 ## Recent Work
 
-- **Fix Assistant** — Chrome DevTools extension that uses Claude to diagnose and fix HTML defects in real-time
+- **Dev Tools Fix Assistant** — Chrome DevTools extension that uses Claude to diagnose and fix HTML defects in real-time
 - **Obsidian Citation Capture** — Browser extension + plugin for capturing academic citations directly into Obsidian
 
 ## Rates
