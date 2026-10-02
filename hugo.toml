@@ -43,7 +43,7 @@ theme = 'PaperMod'
 
 [[params.profileMode.buttons]]
   name = 'Obsidian Citation Capture'
-  url = 'https://scottyad.github.io/obsidian-citation-capture/'
+  url = 'https://cite.archpanda.xyz/'
 
 [params.assets]
   favicon = '/images/mascot.png'
@@ -73,5 +73,5 @@ theme = 'PaperMod'
   [[menu.main]]
     identifier = 'citation'
     name = 'Citation Capture'
-    url = 'https://scottyad.github.io/obsidian-citation-capture/'
+    url = 'https://cite.archpanda.xyz/'
     weight = 40
