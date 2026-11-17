@@ -42,6 +42,10 @@ theme = 'PaperMod'
   url = '/devtools-fixer/'
 
 [[params.profileMode.buttons]]
+  name = 'TellTale'
+  url = '/telltale/'
+
+[[params.profileMode.buttons]]
   name = 'Obsidian Citation Capture'
   url = 'https://cite.archpanda.xyz/'
 
@@ -70,6 +74,11 @@ theme = 'PaperMod'
     name = 'DevTools Fix Assistant'
     url = '/devtools-fixer/'
     weight = 35
+  [[menu.main]]
+    identifier = 'telltale'
+    name = 'TellTale'
+    url = '/telltale/'
+    weight = 38
   [[menu.main]]
     identifier = 'citation'
     name = 'Citation Capture'
